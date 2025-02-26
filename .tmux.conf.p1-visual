@@ -1,0 +1,43 @@
+# Configuração TMUX Dalton Serey
+# Variação para p1
+
+set -g default-terminal "screen-256color"
+
+# loud or quiet?
+set-option -g visual-activity off
+set-option -g visual-bell off
+set-option -g visual-silence off
+set-window-option -g monitor-activity off
+set-option -g bell-action none
+
+#  modes
+set-window-option -g clock-mode-colour colour5
+set-window-option -g mode-style 'fg=colour1 bg=colour18 bold'
+
+# panes
+set-option -g pane-border-style 'fg=colour19 bg=colour0'
+set-option -g pane-active-border-style 'bg=colour0 fg=colour9'
+
+# statusbar
+set-option -g status-position bottom
+set-option -g status-justify left
+set-option -g status-style 'bg=#383838 fg=#ffffff'
+set-option -g status-left ' '
+set-option -g status-right ' #[fg=#383838,bg=#ffaacc] #W #[bg=#383838] #[bg=#aa88cc] #(echo $USER)#[fg=#bbaaee]@#[fg=#383838]#H #[bg=#383838] #[bg=#9999ff] %d/%m %Hh%Mm #[bg=#383838] '
+set-option -g status-right-length 50
+set-option -g status-left-length 20
+
+
+set-window-option -g window-status-style 'fg=gray bg=#448844'
+set-window-option -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244] '
+#set-window-option -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
+
+set-window-option -g window-status-current-style 'fg=#ffffff bg=#448844 bold'
+set-window-option -g window-status-current-format ' #I#[fg=colour249]:#[fg=#00ff00]#W#[fg=#ff0000] '
+#set-window-option -g window-status-current-format ' #I#[fg=colour249]:#[fg=colour255]#W#[fg=colour249]#F '
+
+set-window-option -g window-status-bell-style 'fg=colour255 bg=colour1 bold'
+
+# messages
+set-option -g message-style 'fg=#ffffff bg=#ff0000 bold'
+

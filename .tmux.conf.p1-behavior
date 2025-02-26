@@ -1,0 +1,62 @@
+# Configuração TMUX Dalton Serey
+# Variação para p1
+
+# remap prefix from 'C-b' to 'C-a'
+unbind-key C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+# turn mouse support on
+set-option -g mouse on
+
+# reload config file
+bind-key r source-file ~/.tmux.conf
+
+# disable/enable status bar with 'C-s' (no prefix)
+bind-key -n C-s set-option -g status
+
+# start with window and pane number 1
+set-option -g base-index 1
+set-option -g pane-base-index 1
+
+# allow manual renaming windows
+set-window-option -g allow-rename off
+
+# split vertical panes using | and =
+bind-key | split-window -h -c "#{pane_current_path}"
+bind-key = split-window -h -c "#{pane_current_path}"
+unbind-key %
+
+# split horizontal panes using -
+bind-key - split-window -v -c "#{pane_current_path}"
+unbind-key '"'
+
+# switch window using Ctrl-Shift-Arrow
+#bind-key -n C-S-Left select-window -p
+#bind-key -n C-S-Right select-window -n
+
+# switch panes using Alt-arrow (no prefix)
+bind-key -n M-Left select-pane -L
+bind-key h select-pane -L
+
+bind-key -n M-Right select-pane -R
+bind-key l select-pane -R
+
+bind-key -n M-Up select-pane -U
+bind-key k select-pane -U
+
+bind-key -n M-Down select-pane -D
+bind-key j select-pane -D
+
+# redimensiona painel with Vim keys (no prefix)
+bind-key -n C-S-Left resize-pane -L 1
+bind-key -r H resize-pane -L 1
+
+bind-key -n C-S-Right resize-pane -R 1
+bind-key -r L resize-pane -R 1
+
+bind-key -n C-S-Down resize-pane -D 1
+bind-key -r J resize-pane -D 1
+
+bind-key -n C-S-Up resize-pane -U 1
+bind-key -r K resize-pane -U 1
